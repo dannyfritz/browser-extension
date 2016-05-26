@@ -7,7 +7,8 @@ EXT=""
 
 cd "$(dirname "$0")/.."
 
-"$NPM_BIN/browserify" ./lib/app.js -t babelify --outfile "./$TARGET/app.js"
+# "$NPM_BIN/browserify" ./lib/app.js -t babelify --outfile "./$TARGET/app.js"
+"$NPM_BIN/webpack" --output-path $TARGET
 
 cp -a ./assets/. ./$TARGET
 
